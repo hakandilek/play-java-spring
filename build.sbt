@@ -1,19 +1,14 @@
-name := "play-java-spring"
+name := "play2-crud-activator"
 
-version := "1.0-SNAPSHOT"
+version := "0.7.3-SNAPSHOT"
 
 libraryDependencies ++= Seq(
-  javaCore,
-  "com.h2database" % "h2" % "1.3.168",
-  "org.springframework" % "spring-context" % "3.2.1.RELEASE",
-  "org.springframework" % "spring-orm" % "3.2.1.RELEASE",
-  "org.springframework" % "spring-jdbc" % "3.2.1.RELEASE",
-  "org.springframework" % "spring-tx" % "3.2.1.RELEASE",
-  "org.springframework" % "spring-expression" % "3.2.1.RELEASE",
-  "org.springframework" % "spring-aop" % "3.2.1.RELEASE",
-  "org.springframework" % "spring-test" % "3.2.1.RELEASE" % "test",
-  "org.hibernate" % "hibernate-entitymanager" % "4.1.9.Final",
-  "cglib" % "cglib" % "2.2.2"
+  javaCore, javaJdbc, javaEbean,
+  "play2-crud" % "play2-crud_2.10" % "0.7.3-SNAPSHOT"
 )
 
 play.Project.playJavaSettings
+
+resolvers += "release repository" at  "http://hakandilek.github.com/maven-repo/releases/"
+
+resolvers += "snapshot repository" at "http://hakandilek.github.com/maven-repo/snapshots/"
